@@ -1,0 +1,16 @@
+{
+  "name": "crypto-forge",
+  "version": "0.1.0",
+  "description": "Crypto/trading/blockchain development assistant for Claude Code — build bots, DApps, and smart contracts from your terminal",
+  "author": { "name": "Nicolas Meridjen" },
+  "repository": "https://github.com/nmarijane/crypto-forge",
+  "license": "MIT",
+  "keywords": ["crypto", "trading", "blockchain", "defi", "ethereum", "solidity", "bot", "dapp"],
+  "skills": "./skills/",
+  "agents": [
+    "./agents/bot-builder.md",
+    "./agents/dapp-builder.md",
+    "./agents/contract-builder.md",
+    "./agents/auditor.md"
+  ]
+}
