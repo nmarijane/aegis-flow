@@ -1,0 +1,22 @@
+{
+  "name": "aegis-flow",
+  "version": "1.0.0",
+  "description": "Professional AI workflow — secure, tested, production-ready",
+  "type": "module",
+  "bin": {
+    "aegis-flow": "./bin/aegis-flow.js"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": ["claude-code", "workflow", "security", "ai"],
+  "license": "MIT",
+  "dependencies": {
+    "@inquirer/prompts": "^7.0.0",
+    "commander": "^13.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^3.0.0"
+  }
+}
