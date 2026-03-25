@@ -7,7 +7,11 @@ One command to set up enterprise-grade guardrails, code quality enforcement, and
 ## Quick Start
 
 ```bash
-npx aegis-flow init
+# Install as a Claude Code plugin
+claude plugins add nmarijane/aegis-flow
+
+# Configure your project
+npx github:nmarijane/aegis-flow init
 ```
 
 That's it. Your project is now configured with security hooks, code review agents, and TDD workflows.
@@ -85,11 +89,11 @@ Done! Run `claude` to start with your secured workflow.
 
 | Command | Description |
 |---------|-------------|
-| `npx aegis-flow init` | Interactive project setup |
-| `aegis-flow add <module>` | Enable a module |
-| `aegis-flow remove <module>` | Disable a module |
-| `aegis-flow doctor` | Verify setup health |
-| `aegis-flow update` | Regenerate config after upgrade |
+| `npx github:nmarijane/aegis-flow init` | Interactive project setup |
+| `npx github:nmarijane/aegis-flow add <module>` | Enable a module |
+| `npx github:nmarijane/aegis-flow remove <module>` | Disable a module |
+| `npx github:nmarijane/aegis-flow doctor` | Verify setup health |
+| `npx github:nmarijane/aegis-flow update` | Regenerate config after upgrade |
 
 ## Requirements
 
