@@ -1,0 +1,27 @@
+{
+  "name": "aegis-flow",
+  "version": "1.0.0",
+  "description": "Professional AI workflow — secure, tested, production-ready",
+  "repository": "https://github.com/nmarijane/aegis-flow",
+  "license": "MIT",
+  "keywords": ["workflow", "security", "code-quality", "tdd", "hooks", "agents"],
+  "agents": [
+    { "name": "code-reviewer",    "path": "./core/agents/code-reviewer.md" },
+    { "name": "security-auditor", "path": "./core/agents/security-auditor.md" },
+    { "name": "tdd-runner",       "path": "./core/agents/tdd-runner.md" },
+    { "name": "bot-builder",      "path": "./modules/crypto-forge/agents/bot-builder.md" },
+    { "name": "contract-builder", "path": "./modules/crypto-forge/agents/contract-builder.md" },
+    { "name": "dapp-builder",     "path": "./modules/crypto-forge/agents/dapp-builder.md" },
+    { "name": "auditor",          "path": "./modules/crypto-forge/agents/auditor.md" },
+    { "name": "saas-builder",     "path": "./modules/saas-forge/agents/saas-builder.md" },
+    { "name": "resolver",         "path": "./modules/ticket-pilot/agents/resolver.md" },
+    { "name": "triager",          "path": "./modules/ticket-pilot/agents/triager.md" },
+    { "name": "moderator",        "path": "./modules/ticket-pilot/agents/moderator.md" }
+  ],
+  "skills": "./core/skills/",
+  "modules": {
+    "crypto-forge": { "skills": "./modules/crypto-forge/skills/" },
+    "saas-forge":   { "skills": "./modules/saas-forge/skills/" },
+    "ticket-pilot": { "skills": "./modules/ticket-pilot/skills/" }
+  }
+}
