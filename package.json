@@ -1,5 +1,8 @@
 {
   "name": "aegis-flow-workspace",
   "private": true,
-  "workspaces": ["cli"]
+  "workspaces": ["cli"],
+  "scripts": {
+    "test": "npm test --workspace=cli"
+  }
 }
