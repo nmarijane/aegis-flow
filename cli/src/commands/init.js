@@ -4,6 +4,7 @@ import { buildConfig, writeConfig } from '../lib/config.js';
 import { generateHooksConfig } from '../lib/hooks.js';
 import { generateManifest } from '../lib/manifest.js';
 import { installPlugin } from '../lib/plugin.js';
+import { runModuleAuth } from '../lib/auth.js';
 import { SECURITY_LEVELS, MODULES } from '../constants.js';
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
@@ -44,6 +45,11 @@ export async function runInit(projectDir, pluginDir) {
       value: key
     }))
   });
+
+  // Step 3b: Configure module credentials
+  for (const mod of enabledModules) {
+    await runModuleAuth(mod, projectDir);
+  }
 
   // Step 4: Write config
   console.log('\nWriting configuration...');

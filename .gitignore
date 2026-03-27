@@ -2,3 +2,5 @@
 node_modules/
 .claude/aegis-flow-audit.log
 *.log
+.env
+.env.*

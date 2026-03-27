@@ -4,6 +4,9 @@ import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'fs';
 
 vi.mock('fs');
 vi.mock('@inquirer/prompts');
+vi.mock('../src/lib/auth.js', () => ({
+  runModuleAuth: vi.fn().mockResolvedValue(undefined)
+}));
 
 describe('runInit', () => {
   beforeEach(() => {

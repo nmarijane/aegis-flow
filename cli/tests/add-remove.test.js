@@ -4,6 +4,9 @@ import { runRemove } from '../src/commands/remove.js';
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'fs';
 
 vi.mock('fs');
+vi.mock('../src/lib/auth.js', () => ({
+  runModuleAuth: vi.fn().mockResolvedValue(undefined)
+}));
 
 const mockConfig = {
   version: '1.0.0',
