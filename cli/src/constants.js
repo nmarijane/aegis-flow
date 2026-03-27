@@ -63,3 +63,58 @@ export const TEST_RUNNERS = {
 };
 
 export const PACKAGE_MANAGERS = ['pnpm', 'yarn', 'npm', 'bun'];
+
+export const MODULE_AUTH = {
+  'ticket-pilot': [
+    {
+      service: 'GitHub',
+      type: 'cli',
+      detectCommand: 'gh auth status',
+      setupHint: 'Run: gh auth login'
+    },
+    {
+      service: 'Linear',
+      type: 'token',
+      envVar: 'LINEAR_API_KEY',
+      authUrl: 'https://linear.app/settings/api',
+      validateUrl: 'https://api.linear.app/graphql',
+      validateMethod: 'POST',
+      validateBody: '{"query":"{ viewer { name } }"}',
+      validateHeader: 'Authorization: Bearer {token}',
+      nameExtractor: 'data.viewer.name'
+    },
+    {
+      service: 'Jira',
+      type: 'multi',
+      fields: [
+        { envVar: 'JIRA_BASE_URL', prompt: 'Jira instance URL (e.g. https://mycompany.atlassian.net)' },
+        { envVar: 'JIRA_EMAIL', prompt: 'Jira account email' },
+        { envVar: 'JIRA_API_TOKEN', prompt: 'Jira API token', authUrl: 'https://id.atlassian.com/manage-profile/security/api-tokens' }
+      ],
+      validateFn: 'jira'
+    }
+  ],
+  'crypto-forge': [
+    {
+      service: 'RPC Provider',
+      type: 'token',
+      envVar: 'RPC_URL',
+      authUrl: 'https://dashboard.alchemy.com/apps',
+      prompt: 'RPC URL (Alchemy, Infura, or public)',
+      validateUrl: '{token}',
+      validateMethod: 'POST',
+      validateBody: '{"method":"eth_blockNumber","params":[],"id":1,"jsonrpc":"2.0"}',
+      nameExtractor: 'result'
+    },
+    {
+      service: 'Etherscan',
+      type: 'token',
+      envVar: 'ETHERSCAN_API_KEY',
+      authUrl: 'https://etherscan.io/myapikey',
+      validateUrl: 'https://api.etherscan.io/api?module=stats&action=ethprice&apikey={token}',
+      validateMethod: 'GET',
+      nameExtractor: 'result.ethusd'
+    }
+  ],
+  'saas-forge': []
+};
